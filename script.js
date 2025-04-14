@@ -49,13 +49,6 @@ function fillDataInCard(cardClone, article) {
   });
 }
 
-// when you click on one of the nav items (ipl, finance, politics, technology)
-
-// const ipl = document.querySelector("#ipl");
-// const finance = document.querySelector("#finance");
-// const politics = document.getElementById("politics");
-const technology = document.getElementById("technology");
-
 let currSelectedNavItem = null;
 
 function onNavItemClick(searchQuery) {
@@ -68,14 +61,17 @@ function onNavItemClick(searchQuery) {
   currSelectedNavItem.classList.add("active");
 }
 
-// ipl.addEventListener("click", onNavItemClick("ipl"));
-// finance.addEventListener("click", onNavItemClick("finance"));
-// politics.addEventListener("click", onNavItemClick("politics"));
-// technology.addEventListener("click", onNavItemClick("technology"));  // found the issue
+// handling the nav items (ipl, finance, politics, technology)
 
-// here, we are immediately calling the function, not passing the reference
-// this is how we need to do it:-
+const ipl = document.querySelector("#ipl");
+const finance = document.querySelector("#finance");
+const politics = document.getElementById("politics");
+const technology = document.getElementById("technology");
+
 technology.addEventListener("click", () => onNavItemClick("technology"));
+politics.addEventListener("click", () => onNavItemClick("politics"));
+finance.addEventListener("click", () => onNavItemClick("finance"));
+ipl.addEventListener("click", () => onNavItemClick("ipl"));
 
 // now time to handle the search area
 const searchButton = document.getElementById("search-button");
